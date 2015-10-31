@@ -32,15 +32,20 @@ function GenerateSidebar() {
 }
 
 function GenerateSongs(){
-    var data = ("<main class='songs'>\
-                    <div class='song center-left'>\
-                        <div class='hamburger'>\
-                            <hr><hr><hr>\
-                        </div>\
-                        <div class='song_info'>\
-                            <span> Down To The Felt <em> - Dave Mosion </em></span>\
-                        </div>\
-                    </div>\
-                </main>")
-    return data
+    var data = "<main class='songs'>";
+    // for each loop with GenerateSong()
+    data += "</main>";
+    return data;
+}
+
+function GenerateSong(name, artist){
+    var data = (" <div class='song center-left'>\
+                      <div class='hamburger'>\
+                          <hr><hr><hr>\
+                      </div>\
+                      <div class='song_info'>\
+                          <span> " + name + " <em> - " + artist + " </em></span>\
+                      </div>\
+                  </div> ");
+    return data;
 }
