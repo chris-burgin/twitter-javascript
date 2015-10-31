@@ -1,0 +1,136 @@
+/* Sidebar */
+/* General */
+html {
+    font-size: 62.5%;
+    height: 100%;
+    background-color: #F1F2F5;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: 'Source Sans Pro';
+    color: #575757;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Classes */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.center-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.hamburger {
+    height: 1.8rem;
+    margin-left: 2rem;
+    margin-top: .4rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.hamburger hr {
+    width: 3rem;
+    border: 1px solid #C2C3C7;
+    display: flex;
+    margin: 0;
+}
+/* APPLICATION */
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 10rem;
+    background-color: #2E323F;
+}
+
+.sidebar a {
+    color: white;
+    height: 10rem;
+    font-size: 5rem;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar a.active {
+    background-color: #303E4D;
+}
+
+.sidebar a:hover {
+    background-color: #303E4D;
+}
+
+.sidebar .pointer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar .pointer div {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: -1rem;
+    background-color: #F1F2F5;
+    -webkit-transform:rotate(45deg);
+}
+
+/* Song Page */
+.songs .song {
+    height: 6rem;
+    width: 100%;
+    margin: 1.5rem 2rem;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 2px 0px rgba(46,50,63,0.44);
+}
+
+.songs .song:first-of-type {
+    margin-top: 3rem;
+}
+
+.songs .song .song_info span {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-left: 2rem;
+}
+
+.songs .song .song_info span em {
+    color: #C2C3C7;
+    font-weight: 300;
+    font-style: normal;
+}
