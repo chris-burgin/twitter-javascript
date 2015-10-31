@@ -17,11 +17,10 @@ function RenderSidebar(selector){
     });
 }
 
-function RenderSongs(){
+function RenderSongs(s){
     $(function() {
         $('main').remove()
         $('.marker').after(GenerateSongs());
-        $('.sidebar .' + selector).addClass('active');
     });
 }
 
