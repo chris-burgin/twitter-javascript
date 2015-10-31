@@ -14,7 +14,6 @@ function GenerateHead() {
     return data;
 }
 
-
 function GenerateSidebar() {
     var data = (" <a class='songs-link center' href='#'>\
                       <i class='fa fa-volume-up'></i>\
@@ -38,8 +37,8 @@ function GenerateSongs(){
     return data;
 }
 
-function GenerateSong(name, artist){
-    var data = (" <div class='song center-left'>\
+function GenerateSong(id, name, artist){
+    var data = (" <div class='song center-left' id=" + id + ">\
                       <div class='hamburger'>\
                           <hr><hr><hr>\
                       </div>\
