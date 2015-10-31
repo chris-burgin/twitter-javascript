@@ -3,20 +3,30 @@ try {
     $ = jQuery = module.exports;
 } catch(e) {}
 
-/* Partials */
-function head() {
+/* Renders */
+function RenderHead() {
     $(function() {
-        $.get('../templates/partials/head.html', function(data){
-            $('head').append(data);
-        });
+        $('head').html(GenerateHead());
     });
 }
 
-function sidebar(selector){
+function RenderSidebar(selector){
     $(function() {
-        $.get('../templates/partials/sidebar.html', function(data){
-            $('.sidebar').append(data);
-            $('.sidebar .' + selector).addClass('active');
-        });
+        $('.sidebar').html(GenerateSidebar());
+        $('.sidebar .' + selector).addClass('active');
     });
 }
+
+function RenderSongs(){
+    $(function() {
+        $('main').remove()
+        $('.marker').after(GenerateSongs());
+        $('.sidebar .' + selector).addClass('active');
+    });
+}
+
+
+// Initial Rendering (application start)
+RenderHead();
+RenderSidebar('songs-link');
+RenderSongs();
