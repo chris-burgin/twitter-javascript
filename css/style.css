@@ -17,13 +17,15 @@ body {
 
 main {
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    padding: 0;
+}
+
+ul {
     padding: 0;
 }
 
@@ -111,9 +113,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Song Page */
+.songs {
+    display: flex;
+    flex-flow: column;
+}
+
 .songs .song {
     height: 6rem;
-    width: 100%;
     margin: 1.5rem 2rem;
     background: #FFFFFF;
     box-shadow: 1px 1px 2px 0px rgba(46,50,63,0.44);

@@ -30,21 +30,24 @@ function GenerateSidebar() {
     return data;
 }
 
-function GenerateSongs(){
-    var data = "<main class='songs'>";
-    // for each loop with GenerateSong()
-    data += "</main>";
+function GenerateSongs(songs){
+    var data = "<main class='songs'><ul class='sortable'>";
+    for(var i in songs) {
+        song = songs[i];
+        data += GenerateSong(song.id, song.name, song.artist);
+    }
+    data += "</ul></main>";
     return data;
-}
 
-function GenerateSong(id, name, artist){
-    var data = (" <div class='song center-left' id=" + id + ">\
-                      <div class='hamburger'>\
-                          <hr><hr><hr>\
-                      </div>\
-                      <div class='song_info'>\
-                          <span> " + name + " <em> - " + artist + " </em></span>\
-                      </div>\
-                  </div> ");
-    return data;
+    function GenerateSong(id, name, artist){
+        var data = (" <li class='song center-left' id=" + id + ">\
+                          <div class='hamburger'>\
+                              <hr><hr><hr>\
+                          </div>\
+                          <div class='song_info'>\
+                              <span> " + name + " <em> - " + artist + " </em></span>\
+                          </div>\
+                      </li> ");
+        return data;
+    }
 }
