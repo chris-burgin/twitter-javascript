@@ -21,18 +21,17 @@ function SongSorting() {
                 // fetch and parse id
                 parseInt($(this).attr('id'))
             );
-        });
-        console.log(order);
+        });;
         SortSongs(order);
     });
 
+    // sorting
     function SortSongs(sort) {
         object = [];
         for (var i in sort) {
             for (var s in songs ) {
-                console.log('hi');
                 if (songs[s].id === sort[i]){
-                    object = object.concat(songs[s]);
+                    object = Concat(object, songs[s]);
                     break;
                 }
             }
