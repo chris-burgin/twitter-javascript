@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ul {
     padding: 0;
+    list-style: none;
 }
 
 /* Classes */
@@ -63,7 +64,7 @@ ul {
 
 .hamburger hr {
     width: 3rem;
-    border: 1px solid #C2C3C7;
+    border: .1rem solid #C2C3C7;
     display: flex;
     margin: 0;
 }
@@ -122,8 +123,14 @@ ul {
     height: 6rem;
     margin: 1.5rem 2rem;
     background: #FFFFFF;
-    box-shadow: 1px 1px 2px 0px rgba(46,50,63,0.44);
+    box-shadow: .1rem .1rem .1rem 0 rgba(46,50,63,0.44);
     overflow: hidden;
+}
+
+.songs .song-placehold {
+    height: 6rem;
+    margin: 1.5rem 2rem;
+    border: .2rem dashed #C2C3C7;
 }
 
 .songs .song:first-of-type {

@@ -30,7 +30,7 @@ function GenerateSidebar() {
     return data;
 }
 
-function GenerateSongs(songs){
+function GenerateSongs(){
     var data = "<main class='songs'><ul class='sortable'>";
     for(var i in songs) {
         song = songs[i];
@@ -40,7 +40,7 @@ function GenerateSongs(songs){
     return data;
 
     function GenerateSong(id, name, artist){
-        var data = (" <li class='song center-left' id=" + id + ">\
+        var data = (" <li class='song center-left p1' id=" + id + ">\
                           <div class='hamburger'>\
                               <hr><hr><hr>\
                           </div>\

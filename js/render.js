@@ -11,11 +11,11 @@ function RenderSidebar(selector){
     });
 }
 
-function RenderSongs(songs){
+function RenderSongs(){
     $(function() {
         $('main').remove();
         $('.marker').after(GenerateSongs(songs));
-        ResetSorting();
+        SongSorting();
     });
 
 }

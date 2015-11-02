@@ -4,7 +4,7 @@ var songs = FetchSongs();
 // Initial Rendering
 RenderHead();
 RenderSidebar('songs-link');
-RenderSongs(songs);
+RenderSongs();
 
 
 function allowDrop(ev) {
