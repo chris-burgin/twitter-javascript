@@ -119,13 +119,12 @@ ul {
 
 /* Footer */
 .footer {
-    width: 100%;
+    width: calc(100% - 10rem);
     height: 5rem;
-    background-color: #2E323F;
+    background-color: #E4E4E4;
     position: absolute;
     z-index: 2;
     bottom: 0;
-    left: 0;
     right: 0;
 }
 
