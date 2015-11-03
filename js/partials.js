@@ -1,6 +1,6 @@
 /*jshint multistr: true */
 
-function GenerateHead() {
+function HeadPartial() {
     var data = ("<!-- Fonts -->\
                 <link href='../fonts/SourceSansPro-Bold.ttf' ref='stylesheet'>\
                 <link href='../fonts/SourceSansPro-ExtraLight.ttf' ref='stylesheet'>\
@@ -14,23 +14,7 @@ function GenerateHead() {
     return data;
 }
 
-function GenerateSidebar() {
-    var data = (" <a class='songs-link center' href='#'>\
-                      <i class='fa fa-volume-up'></i>\
-                      <div class='pointer center-right'><div></div></div>\
-                  </a>\
-                  <a class='polls-link center' href='#'>\
-                      <i class='fa fa-list'></i>\
-                      <div class='pointer center-right hidden'><div></div></div>\
-                  </a>\
-                  <a class='play-link center' href='#'>\
-                      <i class='fa fa-play'></i>\
-                      <div class='pointer center-right hidden'><div></div></div>\
-                  </a>");
-    return data;
-}
-
-function GenerateSongs(){
+function SongPartial(){
     var data = "<main class='songs'><ul class='sortable'>";
     for(var i in songs) {
         song = songs[i];
@@ -50,4 +34,24 @@ function GenerateSongs(){
                       </li> ");
         return data;
     }
+}
+
+function PollPartial(){
+    var data = "<main>\
+        <ul class='polls'>\
+            <li class='poll'>\
+                <div class='dragger center'>\
+                    <div class='hamburger'>\
+                        <hr><hr><hr>\
+                    </div>\
+                </div>\
+                <ul>\
+                    <li class='song orange'> asdf</li>\
+                    <li class='song purple'> asdf</li>\
+                    <li class='song teal'> asdf</li>\
+                </ul>\
+            </li>\
+        </ul>\
+    </main>";
+    return data;
 }

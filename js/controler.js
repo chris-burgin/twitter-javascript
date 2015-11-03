@@ -3,7 +3,7 @@ var songs = FetchSongs();
 
 // Initial Rendering
 RenderHead();
-RenderSidebar('songs-link');
+SetSidebar('songs-link');
 RenderSongs();
 
 

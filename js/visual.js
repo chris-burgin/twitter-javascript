@@ -21,7 +21,7 @@ function SongSorting() {
                 // fetch and parse id
                 parseInt($(this).attr('id'))
             );
-        });;
+        });
         SortSongs(order);
     });
 
