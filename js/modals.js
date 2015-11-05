@@ -50,9 +50,15 @@ $('html').on('click', '.poll-single-modal button', function(){
     color1 = parseInt($('.song1 .colorpicker').attr('data-id'));
     color2 = parseInt($('.song2 .colorpicker').attr('data-id'));
     color3 = parseInt($('.song3 .colorpicker').attr('data-id'));
-    AddPoll([song1, song2, song3], [color1, color2, color3]);
-    CloseModal();
-    RenderPolls();
+
+    //validation
+    if (isNaN(song1) || isNaN(song2) || isNaN(song3)) {
+        alert('Error');
+    } else {
+        AddPoll([song1, song2, song3], [color1, color2, color3]);
+        CloseModal();
+        RenderPolls();
+    }
 });
 
 // Color Picker

@@ -91,8 +91,57 @@ ul {
 .blur {
     -webkit-filter: blur(.2rem);
 }
-/* APPLICATION */
 
+/* Notification */
+.notification {
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: absolute;
+    top: 1;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    padding-bottom: 3rem;
+}
+
+
+.notification.alert {
+    background-color: #E86262;
+}
+
+.notification.success {
+    background-color: #62E8B3;
+}
+
+.notification.general {
+    background-color: #62A3E8;
+}
+
+.notification span {
+    color: white;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.notification .close {
+    width: 100%;
+    height: 2rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+}
+
+.notification .close a {
+    color: white;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+/* Main */
 /* Sidebar */
 .sidebar {
     height: 100%;

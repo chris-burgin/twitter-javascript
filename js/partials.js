@@ -1,7 +1,7 @@
 /*jshint multistr: true */
-
+// Other
 function HeadPartial() {
-    var data = ("<!-- Fonts -->\
+    var data = "<!-- Fonts -->\
                 <link href='../fonts/SourceSansPro-Bold.ttf' ref='stylesheet'>\
                 <link href='../fonts/SourceSansPro-ExtraLight.ttf' ref='stylesheet'>\
                 <link href='../fonts/SourceSansPro-Light.ttf' ref='stylesheet'>\
@@ -10,9 +10,15 @@ function HeadPartial() {
                 <link href='../css/fontAwesome.css' rel='stylesheet'>\
                 <!-- CSS -->\
                 <link href='../css/style.css' rel='stylesheet'>\
-                <!-- JS -->");
+                <!-- JS -->";
     return data;
 }
+
+function NotificationPartial(type, message) {
+    var data = "<div class='notification " + type + "'><div class='close center-right'><a href='#'><i class='fa fa-times'></i></a></div><span>" + message + "</span></div>";
+    return data;
+}
+
 
 // Songs
 function SongPartial(){
@@ -115,7 +121,7 @@ function PollsModalPartial() {
                         <span> Song 1 </span>\
                         <div class='select-wrapper center song1'>\
                             <select>\
-                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                <option value='null' disabled='disabled' selected='selected'>Please Select A Song!</option>\
                                 " + songshtml + "\
                             </select>\
                             " + colorpicker + "\
@@ -123,7 +129,7 @@ function PollsModalPartial() {
                         <span> Song 2 </span>\
                         <div class='select-wrapper center song2'>\
                             <select>\
-                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                <option value='null' disabled='disabled' selected='selected'>Please Select A Song!</option>\
                                 " + songshtml + "\
                             </select>\
                             " + colorpicker + "\
@@ -131,7 +137,7 @@ function PollsModalPartial() {
                         <span center-left> Song 3 </span>\
                         <div class='select-wrapper center song3'>\
                             <select>\
-                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                <option value='null' disabled='disabled' selected='selected'>Please Select A Song!</option>\
                                 " + songshtml + "\
                             </select>\
                             " + colorpicker + "\
