@@ -14,6 +14,7 @@ function HeadPartial() {
     return data;
 }
 
+// Songs
 function SongPartial(){
     var data = "<main class='songs'><ul class='sortable'>";
     for(var i in songs) {
@@ -36,19 +37,27 @@ function SongPartial(){
     }
 }
 
-function SongFooterPartial(){
-    var data = "<div class='song-footer-content center-right'>\
+function SongsFooterPartial(){
+    var data = "<div class='songs-footer-content center-right'>\
                     <a href='#'><i class='fa fa-plus'></i></a>\
                 </div>";
     return data;
 }
 
 function SongsUploadPartial() {
-    var data = null;
+    var data = "<div class='modal-content song-modal center'>\
+                    <h2 class='center'> Pick Your Song! </h2>\
+                    <div class='upload-field center'>\
+                        <i class='fa fa-file'></i>\
+                        <span> Drag Song Here </span>\
+                    </div>\
+                </div>";
     return data;
 }
 
-function PollPartial() {
+
+// Polls
+function PollsPartial() {
     var data = "<main><ul class='polls pollsortable'>";
     for(var i in polls) {
         poll = polls[i];
@@ -73,6 +82,36 @@ function PollPartial() {
     }
 }
 
-function PollsModalPartial() {
+function PollsFooterPartial(){
+    var data = "<div class='polls-footer-content center-right'>\
+                    <a href='#'><i class='fa fa-plus'></i></a>\
+                </div>";
+    return data;
+}
 
+function PollsModalPartial() {
+    var data = "<div class='modal-content poll-modal center'>\
+                    <h2 class='center'> Pick Those Tunes! </h2>\
+                    <div class='pick-songs'>\
+                        <span> Song 1 </span>\
+                        <select>\
+                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                            <option value='1'>One Things Remails</option>\
+                            <option value='2'>This Is Amazing Grace</option>\
+                        </select>\
+                        <span> Song 2 </span>\
+                        <select>\
+                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                            <option value='1'>One Things Remails</option>\
+                            <option value='2'>This Is Amazing Grace</option>\
+                        </select>\
+                        <span center-left> Song 3 </span>\
+                        <select>\
+                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                            <option value='1'>One Things Remails</option>\
+                            <option value='2'>This Is Amazing Grace</option>\
+                        </select>\
+                    </div>\
+                </div>";
+    return data;
 }

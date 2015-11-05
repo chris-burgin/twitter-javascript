@@ -24,6 +24,19 @@ main {
     margin-bottom: 5rem;
 }
 
+/* Forms */
+select {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #FFFFFF;
+    border-radius: 3px;
+    width: 40rem;
+    font-size: 2.4rem;
+    height: 5rem;
+    font-family: Source Sans Pro;
+    outline: 0;
+}
+
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -198,12 +211,12 @@ ul {
     font-style: normal;
 }
 
-.song-footer-content {
+.songs-footer-content {
     width: 100%;
     height: 100%;
 }
 
-.song-footer-content a {
+.songs-footer-content a {
     margin-right: 5rem;
     font-size: 2.5rem;
     color: #2E323F;
@@ -281,4 +294,28 @@ input{
     height: 18rem;
     margin: 1.5rem 2rem;
     border: .2rem dashed #C2C3C7;
+}
+
+.polls-footer-content {
+    width: 100%;
+    height: 100%;
+}
+
+.polls-footer-content a {
+    margin-right: 5rem;
+    font-size: 2.5rem;
+    color: #2E323F;
+}
+
+.poll-modal .pick-songs {
+    display: flex;
+    flex-flow: column;
+}
+
+.poll-modal .pick-songs span{
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
 }

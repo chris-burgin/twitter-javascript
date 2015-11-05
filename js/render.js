@@ -11,6 +11,8 @@ function SetSidebar(selector) {
     $('.sidebar .' + selector).addClass('active');
 }
 
+
+//Songs
 function RenderSongs(){
     $(function() {
         //sidebar
@@ -23,27 +25,38 @@ function RenderSongs(){
 
         //footer
         $('footer').html("");
-        $('footer').html(SongFooterPartial());
+        $('footer').html(SongsFooterPartial());
     });
 }
 
 function RenderSongModal() {
-    SongsUploadPartial();
+    $('.modal').html("");
+    $('.modal').html(SongsUploadPartial());
 }
 
+
+// Polls
 function RenderPolls() {
     //sidebar
     SetSidebar('polls-link');
 
     //main
     $('main').remove();
-    $('.marker').after(PollPartial());
+    $('.marker').after(PollsPartial());
     PollSorting();
 
     //footer
     $('footer').html("");
+    $('footer').html(PollsFooterPartial());
 }
 
+function RenderPollsModal() {
+    $('.modal').html("");
+    $('.modal').html(PollsModalPartial());
+}
+
+
+// Play
 function RenderPlay() {
     //sidebar
     SetSidebar('play-link');

@@ -20,13 +20,22 @@ function CloseModal() {
 
 
 // Events
-$('html').on('click', '.modal', function() {
-    CloseModal();
+$('html').on('click', '.modal', function(e) {
+    if(e.target == this){
+        CloseModal();
+    }
 });
 
 
 // Modal Routes
-$('html').on('click', '.song-footer-content a', function(){
+//Songs
+$('html').on('click', '.songs-footer-content a', function(){
     OpenModal();
     RenderSongModal();
+});
+
+//Polls
+$('html').on('click', '.polls-footer-content a', function(){
+    OpenModal();
+    RenderPollsModal();
 });
