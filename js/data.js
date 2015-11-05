@@ -3,7 +3,11 @@ var fs = require('fs');
 
 // Helpers
 function Concat(oldobject, newobject){
-    object = oldobject.concat(newobject);
+    if ($.isEmptyObject(oldobject)) {
+        return newobject;
+    } else {
+        object = oldobject.concat(newobject);
+    }
     return object;
 }
 // Colors
