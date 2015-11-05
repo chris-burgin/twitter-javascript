@@ -6,7 +6,8 @@ html {
     background-color: #F1F2F5;
 }
 
-body {
+body,
+.app-wrapper {
     margin: 0;
     height: 100%;
     display: flex;
@@ -14,6 +15,7 @@ body {
     font-family: 'Source Sans Pro';
     color: #575757;
     overflow: hidden;
+    width: 100%;
 }
 
 main {
@@ -72,6 +74,10 @@ ul {
     display: flex;
     margin: 0;
 }
+
+.blur {
+    -webkit-filter: blur(.2rem);
+}
 /* APPLICATION */
 
 /* Sidebar */
@@ -128,6 +134,37 @@ ul {
     right: 0;
 }
 
+/* Modal */
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    background-color: rgba(0,0,0,.41);
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 100rem;
+    height: 60rem;
+    max-height: 90%;
+    background-color: #2E323F;
+    margin: auto;
+    border: .3rem solid white;
+    flex-flow: column;
+}
+
+.modal .modal-content h2 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
 /* Song Page */
 .songs {
     display: flex;
@@ -161,6 +198,41 @@ ul {
     font-style: normal;
 }
 
+.song-footer-content {
+    width: 100%;
+    height: 100%;
+}
+
+.song-footer-content a {
+    margin-right: 5rem;
+    font-size: 2.5rem;
+    color: #2E323F;
+}
+
+.song-modal .upload-field {
+    height: 25rem;
+    width: 45rem;
+    border: .3rem dashed white;
+    flex-flow: column;
+}
+
+.song-modal .upload-field i {
+    font-size: 13rem;
+    color: white;
+}
+
+.song-modal .upload-field span {
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    margin-top: 1rem;
+}
+
+input{
+    background-color: black;
+}
+
+
 /* Polls Page */
 
 .polls .poll {
@@ -169,7 +241,7 @@ ul {
     background: #FFFFFF;
     box-shadow: .1rem .1rem .1rem 0 rgba(46,50,63,0.44);
     overflow: hidden;
-        display: flex
+    display: flex
 }
 
 .polls .poll .dragger {
@@ -200,14 +272,13 @@ ul {
     align-items: center;
 }
 
-.orange {
-    background-color: #DC9138;
+.polls .poll .song em {
+    font-style: normal;
+    margin-left: .8rem;
+    font-weight: 300;
 }
-
-.purple {
-    background-color: #DC38C6;
-}
-
-.teal {
-    background-color: #38DCB9;
+.poll-placehold {
+    height: 18rem;
+    margin: 1.5rem 2rem;
+    border: .2rem dashed #C2C3C7;
 }

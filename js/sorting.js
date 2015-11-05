@@ -39,3 +39,44 @@ function SongSorting() {
         UpdateSongs(object);
     }
 }
+
+function PollSorting() {
+    // init
+    $('.pollsortable').sortable({
+        placeholder: '<li class="poll-placehold"></li>'
+    });
+
+    // sort stop
+    $('.sortable').sortable().bind('sortstop', function(e, ui) {
+        // place item
+        $('.sortable-placeholder').after(ui.item[0]);
+    });
+
+    // dom position changed
+    $('.pollsortable').sortable().bind('sortupdate', function(e, ui) {
+        // update database order
+        var order = [];
+        $('.polls .poll').each(function( index ) {
+            // push id to list
+            order.push(
+                // fetch and parse id
+                parseInt($(this).attr('id'))
+            );
+        });
+        SortPolls(order);
+    });
+
+    // sorting
+    function SortPolls(sort) {
+        object = [];
+        for (var i in sort) {
+            for (var p in polls ) {
+                if (polls[p].id === sort[i]){
+                    object = Concat(object, polls[p]);
+                    break;
+                }
+            }
+        }
+        UpdatePolls(object);
+    }
+}

@@ -1,3 +1,4 @@
+// Helpers
 function IsActive(selector){
     if ($('.sidebar .active').hasClass(selector)) {
         return true;
@@ -6,7 +7,7 @@ function IsActive(selector){
     }
 }
 
-// Routes
+// Main Routes
 $('.sidebar').on('click', '.songs-link', function() {
     if (!IsActive('songs-link')) {
         RenderSongs(songs);

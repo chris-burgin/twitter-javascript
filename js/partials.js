@@ -36,22 +36,43 @@ function SongPartial(){
     }
 }
 
-function PollPartial(){
-    var data = "<main>\
-        <ul class='polls'>\
-            <li class='poll'>\
-                <div class='dragger center'>\
-                    <div class='hamburger'>\
-                        <hr><hr><hr>\
-                    </div>\
-                </div>\
-                <ul>\
-                    <li class='song orange'> asdf</li>\
-                    <li class='song purple'> asdf</li>\
-                    <li class='song teal'> asdf</li>\
-                </ul>\
-            </li>\
-        </ul>\
-    </main>";
+function SongFooterPartial(){
+    var data = "<div class='song-footer-content center-right'>\
+                    <a href='#'><i class='fa fa-plus'></i></a>\
+                </div>";
     return data;
+}
+
+function SongsUploadPartial() {
+    var data = null;
+    return data;
+}
+
+function PollPartial() {
+    var data = "<main><ul class='polls pollsortable'>";
+    for(var i in polls) {
+        poll = polls[i];
+        data += GeneratePoll(poll.id, poll.songs);
+    }
+    data +=  "</ul></main>";
+    return data;
+
+    function GeneratePoll(id, songs) {
+        var data = "<li class='poll' id=" + id + ">\
+            <div class='dragger center'>\
+                <div class='hamburger'>\
+                    <hr><hr><hr>\
+                </div>\
+            </div>\
+            <ul>";
+            for(var i in songs){
+                data += "<li class='song' data-id=" + songs[i] + " style='background-color:" + SongColor(songs[i]) + ";'> " + SongString(songs[i])  + "</li>";
+            }
+            data += "</ul></li>";
+        return data;
+    }
+}
+
+function PollsModalPartial() {
+
 }
