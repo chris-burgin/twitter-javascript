@@ -188,7 +188,7 @@ ul {
     border: none;
     margin-top: 2rem;
     height: 5rem;
-    width: 40rem;
+    width: 46rem;
 }
 
 /* Song Page */
@@ -331,4 +331,54 @@ input{
     font-weight: 200;
     margin-top: 2rem;
     margin-bottom: .5rem;
+}
+
+.poll-single-modal .colorpicker {
+    height: 5rem;
+    width: 5rem;
+    max-height: 5rem;
+    max-width: 5rem;
+    background-color: red;
+    margin-left: 1rem;
+    border-radius: .3rem;
+    position: relative;
+}
+
+.poll-single-modal .colorpicker .selector {
+    height: 25rem;
+    width: 18rem;
+    position: absolute;
+    top: 0;
+    background-color: #2E323F;
+    border: .2rem solid white;
+    border-radius: .3rem;
+    z-index: 1;
+}
+
+.poll-single-modal .song3 .colorpicker .selector {
+    top: -20rem;;
+    bottom: 0 !important;
+}
+
+.poll-single-modal .colorpicker .selector .close-wrapper {
+    text-align: right;
+}
+
+.poll-single-modal .colorpicker .selector .close {
+    text-align: right;
+    color: white;
+    font-size: 2rem;
+    margin-right: .5rem;
+}
+
+.poll-single-modal .colorpicker .selector .color-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding-bottom: 2rem;
+}
+
+.poll-single-modal .colorpicker .selector .color-wrapper div {
+    height: 5rem;
+    width: 5rem;
+    margin: 1rem;
 }

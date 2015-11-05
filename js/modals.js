@@ -20,6 +20,7 @@ function CloseModal() {
 
 
 // Events
+// Close Modal
 $('html').on('click', '.modal', function(e) {
     if(e.target == this){
         CloseModal();
@@ -43,10 +44,55 @@ $('html').on('click', '.polls-footer-content a', function(){
 
 // Create New
 $('html').on('click', '.poll-single-modal button', function(){
-    song1 = parseInt($('#song1').val());
-    song2 = parseInt($('#song2').val());
-    song3 = parseInt($('#song3').val());
-    AddPoll([song1, song2, song3]);
+    song1 = parseInt($('.song1 select').val());
+    song2 = parseInt($('.song2 select').val());
+    song3 = parseInt($('.song3 select').val());
+    color1 = parseInt($('.song1 .colorpicker').attr('data-id'));
+    color2 = parseInt($('.song2 .colorpicker').attr('data-id'));
+    color3 = parseInt($('.song3 .colorpicker').attr('data-id'));
+    AddPoll([song1, song2, song3], [color1, color2, color3]);
     CloseModal();
     RenderPolls();
 });
+
+// Color Picker
+// open
+$('html').on('click', '.poll-single-modal .colorpicker', function(e){
+    if(e.target == this){
+        $('.colorpicker .selector').addClass('hidden');
+        $(this).children('.selector').removeClass('hidden');
+    }
+    return false;
+});
+
+// close
+$('html').on('click', '.close', function(){
+    $(this).parent().parent().addClass('hidden');
+});
+
+// color picked
+$('html').on('click', '.colorpicker .color-wrapper div', function(){
+    $(this).parent().parent().addClass('hidden');
+    id = parseInt($(this).attr('data-id'));
+    $(this).parent().parent().parent().attr('data-id', id);
+    $(this).parent().parent().parent().css('background-color', SongColor(id));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// spacer

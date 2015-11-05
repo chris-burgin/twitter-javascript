@@ -1,5 +1,8 @@
 {
   "name"    : "javascript-twitter",
   "version" : "0.2.0",
-  "main"    : "main.js"
+  "main"    : "main.js",
+  "scripts" : {
+    "pack:osx": "npm run build:osx && electron-builder \"dist/osx/Loopline Systems.app\" --platform=osx --out=\"dist/osx\" --config=packager.json"
+  }
 }

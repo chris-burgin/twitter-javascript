@@ -61,12 +61,12 @@ function PollsPartial() {
     var data = "<main><ul class='polls pollsortable'>";
     for(var i in polls) {
         poll = polls[i];
-        data += GeneratePoll(poll.id, poll.songs);
+        data += GeneratePoll(poll.id, poll.songs, poll.colors);
     }
     data +=  "</ul></main>";
     return data;
 
-    function GeneratePoll(id, songs) {
+    function GeneratePoll(id, songs, colors) {
         var data = "<li class='poll' id=" + id + ">\
             <div class='dragger center'>\
                 <div class='hamburger'>\
@@ -75,7 +75,7 @@ function PollsPartial() {
             </div>\
             <ul>";
             for(var i in songs){
-                data += "<li class='song' data-id=" + songs[i] + " style='background-color:" + SongColor(songs[i]) + ";'> " + SongString(songs[i])  + "</li>";
+                data += "<li class='song' data-id=" + songs[i] + " style='background-color:" + SongColor(colors[i]) + ";'> " + SongString(songs[i])  + "</li>";
             }
             data += "</ul></li>";
         return data;
@@ -95,24 +95,47 @@ function PollsModalPartial() {
         songshtml += "<option value='" + songs[i].id + "'>" + songs[i].name +" - " + songs[i].artist + "</option>";
     }
 
+    var colorpicker = "<div class='colorpicker' data-id='-1'>\
+                        <div class='selector hidden'>\
+                            <div class='close-wrapper'><a class='close' href='#'><i class='fa fa-times'></i></a></div> \
+                            <div class='color-wrapper center'>\
+                                <div style='background-color:" + SongColor(0) + ";' data-id='0'> </div>\
+                                <div style='background-color:" + SongColor(1) + ";' data-id='1'> </div>\
+                                <div style='background-color:" + SongColor(2) + ";' data-id='2'> </div>\
+                                <div style='background-color:" + SongColor(3) + ";' data-id='3'> </div>\
+                                <div style='background-color:" + SongColor(4) + ";' data-id='4'> </div>\
+                                <div style='background-color:" + SongColor(5) + ";' data-id='5'> </div>\
+                            </div>\
+                        </div>\
+                       </div>";
+
     var data = "<div class='modal-content poll-single-modal center'>\
                     <h2 class='center'> Pick Those Tunes! </h2>\
                     <div class='pick-songs'>\
                         <span> Song 1 </span>\
-                        <select id='song1'>\
-                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            " + songshtml + "\
+                        <div class='select-wrapper center song1'>\
+                            <select>\
+                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                " + songshtml + "\
                             </select>\
+                            " + colorpicker + "\
+                        </div>\
                         <span> Song 2 </span>\
-                        <select id='song2'>\
-                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            " + songshtml + "\
-                        </select>\
+                        <div class='select-wrapper center song2'>\
+                            <select>\
+                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                " + songshtml + "\
+                            </select>\
+                            " + colorpicker + "\
+                        </div>\
                         <span center-left> Song 3 </span>\
-                        <select id='song3'>\
-                            <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            " + songshtml + "\
-                        </select>\
+                        <div class='select-wrapper center song3'>\
+                            <select>\
+                                <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
+                                " + songshtml + "\
+                            </select>\
+                            " + colorpicker + "\
+                        </div>\
                         <button> Songs Picked! </button>\
                     </div>\
                 </div>";

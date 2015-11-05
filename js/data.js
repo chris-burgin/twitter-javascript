@@ -6,6 +6,15 @@ function Concat(oldobject, newobject){
     object = oldobject.concat(newobject);
     return object;
 }
+// Colors
+function FetchColors() {
+    object = JSON.parse(fs.readFileSync('data/colors.json', 'utf8'));
+    return object;
+}
+
+function SongColor(id) {
+    return colors.colors[id];
+}
 
 // Songs
 function NextSongID() {
@@ -27,14 +36,6 @@ function SongString(id){
     for (var i in songs) {
         if (songs[i].id === id) {
             return songs[i].name + " - <em> " + songs[i].artist + "</em>";
-        }
-    }
-}
-
-function SongColor(id) {
-    for (var i in songs) {
-        if (songs[i].id === id) {
-            return songs[i].color;
         }
     }
 }
@@ -74,11 +75,12 @@ function UpdatePolls(object) {
     fs.writeFile('data/polls.json',string,function(err) {});
 }
 
-function AddPoll(ids) {
+function AddPoll(ids, colors) {
     object = [
                 {
                 'id': NextSongID(),
-                'songs': ids
+                'songs': ids,
+                'colors': colors
                 }
              ];
     object = Concat(polls, object);
