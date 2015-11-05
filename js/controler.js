@@ -6,6 +6,3 @@ var polls = FetchPolls();
 RenderHead();
 SetSidebar('songs-link');
 RenderSongs();
-
-
-console.log(FetchPolls());

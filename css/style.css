@@ -178,6 +178,19 @@ ul {
     margin-bottom: 1rem;
 }
 
+.modal button {
+    background: #DC9138;
+    border-radius: .3rem;
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 31px;
+    border: none;
+    margin-top: 2rem;
+    height: 5rem;
+    width: 40rem;
+}
+
 /* Song Page */
 .songs {
     display: flex;
@@ -307,12 +320,12 @@ input{
     color: #2E323F;
 }
 
-.poll-modal .pick-songs {
+.poll-single-modal .pick-songs {
     display: flex;
     flex-flow: column;
 }
 
-.poll-modal .pick-songs span{
+.poll-single-modal .pick-songs span{
     color: white;
     font-size: 2rem;
     font-weight: 200;

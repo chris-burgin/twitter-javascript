@@ -35,7 +35,18 @@ $('html').on('click', '.songs-footer-content a', function(){
 });
 
 //Polls
+//Generate
 $('html').on('click', '.polls-footer-content a', function(){
     OpenModal();
     RenderPollsModal();
+});
+
+// Create New
+$('html').on('click', '.poll-single-modal button', function(){
+    song1 = parseInt($('#song1').val());
+    song2 = parseInt($('#song2').val());
+    song3 = parseInt($('#song3').val());
+    AddPoll([song1, song2, song3]);
+    CloseModal();
+    RenderPolls();
 });

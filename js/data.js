@@ -73,3 +73,14 @@ function UpdatePolls(object) {
     string = JSON.stringify(object);
     fs.writeFile('data/polls.json',string,function(err) {});
 }
+
+function AddPoll(ids) {
+    object = [
+                {
+                'id': NextSongID(),
+                'songs': ids
+                }
+             ];
+    object = Concat(polls, object);
+    UpdatePolls(object);
+}

@@ -90,27 +90,30 @@ function PollsFooterPartial(){
 }
 
 function PollsModalPartial() {
-    var data = "<div class='modal-content poll-modal center'>\
+    var songshtml = "";
+    for (var i in songs) {
+        songshtml += "<option value='" + songs[i].id + "'>" + songs[i].name +" - " + songs[i].artist + "</option>";
+    }
+
+    var data = "<div class='modal-content poll-single-modal center'>\
                     <h2 class='center'> Pick Those Tunes! </h2>\
                     <div class='pick-songs'>\
                         <span> Song 1 </span>\
-                        <select>\
+                        <select id='song1'>\
                             <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            <option value='1'>One Things Remails</option>\
-                            <option value='2'>This Is Amazing Grace</option>\
-                        </select>\
+                            " + songshtml + "\
+                            </select>\
                         <span> Song 2 </span>\
-                        <select>\
+                        <select id='song2'>\
                             <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            <option value='1'>One Things Remails</option>\
-                            <option value='2'>This Is Amazing Grace</option>\
+                            " + songshtml + "\
                         </select>\
                         <span center-left> Song 3 </span>\
-                        <select>\
+                        <select id='song3'>\
                             <option value='' disabled='disabled' selected='selected'>Please Select A Song!</option>\
-                            <option value='1'>One Things Remails</option>\
-                            <option value='2'>This Is Amazing Grace</option>\
+                            " + songshtml + "\
                         </select>\
+                        <button> Songs Picked! </button>\
                     </div>\
                 </div>";
     return data;
