@@ -6,7 +6,11 @@ var general = ['general'];
 
 // display
 function Notification(type, message){
-    $('main').before(NotificationPartial(type[0], message));
+    if (activemodal === true) {
+        $('.modal-content').before(NotificationPartial(type[0], message));
+    } else {
+        $('main').before(NotificationPartial(type[0], message));
+    }
 }
 
 // Close

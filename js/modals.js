@@ -10,12 +10,14 @@ function Blur(status){
 function OpenModal() {
     Blur(true);
     $('.modal').removeClass('hidden');
+    activemodal = true;
 }
 
 function CloseModal() {
     Blur(false);
     $('.modal').addClass('hidden');
     $('.modal .modal-content').html("");
+    activemodal = false;
 }
 
 
@@ -33,7 +35,45 @@ $('html').on('click', '.modal', function(e) {
 $('html').on('click', '.songs-footer-content a', function(){
     OpenModal();
     RenderSongModal();
+    DragDropFile();
 });
+
+function DragDropFile(){
+    var holder = document.getElementById('upload-field');
+    holder.ondragover = function () {
+        $('.upload-field').addClass('dragged');
+        return false;
+    };
+    holder.ondragleave = holder.ondragend = function () {
+        $('.upload-field').removeClass('dragged');
+        return false;
+    };
+    holder.ondrop = function (e) {
+        e.preventDefault();
+        var file = e.dataTransfer.files[0];
+        console.log('File you dragged here is', file.path);
+        RenderSongInfo(file.path);
+        return false;
+    };
+}
+// creates new
+$('html').on('click', '.song-modal button', function(){
+    name = $('#name').val();
+    artist = $('#artist').val();
+    hashtag = $('#hashtag').val();
+    filepath = $('#file').val();
+    console.log(filepath);
+
+    //validation
+    if (name === "" || artist === "" || hashtag === "") {
+        alert('Error');
+    } else {
+        AddSong(filepath, name, artist, hashtag);
+        CloseModal();
+        RenderSongs();
+    }
+});
+
 
 //Polls
 //Generate
@@ -53,8 +93,11 @@ $('html').on('click', '.poll-single-modal button', function(){
 
     //validation
     if (isNaN(song1) || isNaN(song2) || isNaN(song3)) {
-        alert('Error');
+        Notification(alert, "Missing some songs there!");
+    } else if (color1 === -1 || color2 === -1 || color3 === -1) {
+            Notification(alert, "Don't forgot the colors!");
     } else {
+        console.log(color1);
         AddPoll([song1, song2, song3], [color1, color2, color3]);
         CloseModal();
         RenderPolls();

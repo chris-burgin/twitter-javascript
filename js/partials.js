@@ -43,17 +43,10 @@ function SongPartial(){
     }
 }
 
-function SongsFooterPartial(){
-    var data = "<div class='songs-footer-content center-right'>\
-                    <a href='#'><i class='fa fa-plus'></i></a>\
-                </div>";
-    return data;
-}
-
 function SongsUploadPartial() {
     var data = "<div class='modal-content song-modal center'>\
                     <h2 class='center'> Pick Your Song! </h2>\
-                    <div class='upload-field center'>\
+                    <div class='upload-field center' id='upload-field'>\
                         <i class='fa fa-file'></i>\
                         <span> Drag Song Here </span>\
                     </div>\
@@ -61,6 +54,29 @@ function SongsUploadPartial() {
     return data;
 }
 
+function SongsInfoPartial(filepath) {
+    var data = "<div class='modal-content song-modal center'>\
+                    <h2> Tell Us More! </h2>\
+                    <div class='content-wrapper'>\
+                        <input id='file' value='" + filepath + "' class='hidden'>\
+                        <span> Song Name </span>\
+                        <input id='name' value=" + 'songname' + ">\
+                        <span> Artist </span>\
+                        <input id='artist' value=" + 'artist' + ">\
+                        <span> Hashtag </span>\
+                        <input id='hashtag' value=" + '#hashtag' + ">\
+                        <button> Finish Up! </button>\
+                    </div>\
+                </div>";
+    return data;
+}
+
+function SongsFooterPartial(){
+    var data = "<div class='songs-footer-content center-right'>\
+                    <a href='#'><i class='fa fa-plus'></i></a>\
+                </div>";
+    return data;
+}
 
 // Polls
 function PollsPartial() {

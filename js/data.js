@@ -61,6 +61,7 @@ function AddSong(path, name, artist, hashtag) {
                 }
              ];
     object = Concat(songs, object);
+    UpdateSongs(object);
 }
 
 // Polls

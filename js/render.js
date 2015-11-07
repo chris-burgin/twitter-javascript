@@ -34,6 +34,11 @@ function RenderSongModal() {
     $('.modal').html(SongsUploadPartial());
 }
 
+function RenderSongInfo(filepath){
+    $('.modal').html("");
+    $('.modal').html(SongsInfoPartial(filepath));
+}
+
 
 // Polls
 function RenderPolls() {

@@ -37,6 +37,18 @@ select {
     outline: 0;
 }
 
+input{
+    background-color: transparent;
+    color: white;
+    border: 2px solid #FFFFFF;
+    border-radius: 3px;
+    width: 40rem;
+    font-size: 2.4rem;
+    height: 5rem;
+    font-family: Source Sans Pro;
+    outline: 0;
+}
+
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -291,9 +303,18 @@ ul {
     flex-flow: column;
 }
 
+.song-modal .upload-field.dragged {
+    border-color: #62E8B3;
+    cursor: copy;
+}
+
 .song-modal .upload-field i {
     font-size: 13rem;
     color: white;
+}
+
+.song-modal .upload-field.dragged i {
+    display: none;
 }
 
 .song-modal .upload-field span {
@@ -303,8 +324,37 @@ ul {
     margin-top: 1rem;
 }
 
-input{
-    background-color: black;
+.song-modal .upload-field.dragged span {
+    display: none;
+}
+
+.song-modal .content-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.song-modal .content-wrapper input{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.song-modal .content-wrapper span {
+    width: 40.6rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 200;
+    margin-bottom: .5rem;
+}
+
+.modal .song-modal .content-wrapper button {
+    width: 40rem;
+}
+
+.song-modal .content-wrapper input.hidden{
+    display: none;
 }
 
 
