@@ -4,8 +4,12 @@ var fs = require('fs');
 // Helpers
 function Concat(oldobject, newobject){
     if ($.isEmptyObject(oldobject)) {
+        console.log('newwww');
+        console.log(newobject);
         return newobject;
     } else {
+        console.log('old');
+        console.log(oldobject);
         object = oldobject.concat(newobject);
     }
     return object;

@@ -31,7 +31,7 @@ function SongSorting() {
         for (var i in sort) {
             for (var s in songs ) {
                 if (songs[s].id === sort[i]){
-                    object = Concat(object, songs[s]);
+                    object.push(songs[s]);
                     break;
                 }
             }
@@ -72,7 +72,7 @@ function PollSorting() {
         for (var i in sort) {
             for (var p in polls ) {
                 if (polls[p].id === sort[i]){
-                    object = Concat(object, polls[p]);
+                    object.push(polls[p]);
                     break;
                 }
             }

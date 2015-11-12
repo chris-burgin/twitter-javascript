@@ -74,7 +74,7 @@ function SongsInfoPartial(filepath) {
 
 function UpdateSongsInfoPartial(id, filepath, songname, artist, hashtag) {
     var data = "<div class='modal-content update-song-modal center'>\
-                    <h2> Tell Us More! </h2>\
+                    <h2> Update Song </h2>\
                     <div class='content-wrapper'>\
                         <input id='file' value='" + filepath + "' class='hidden'>\
                         <span> Song Name </span>\
@@ -83,7 +83,7 @@ function UpdateSongsInfoPartial(id, filepath, songname, artist, hashtag) {
                         <input id='artist' value='" + artist + "'>\
                         <span> Hashtag </span>\
                         <input id='hashtag' value='" + hashtag + "'>\
-                        <button data-id='" + id + "'> Finish Up! </button>\
+                        <button data-id='" + id + "'> Update </button>\
                     </div>\
                 </div>";
     return data;
