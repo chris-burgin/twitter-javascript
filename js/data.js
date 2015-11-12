@@ -64,6 +64,16 @@ function AddSong(path, name, artist, hashtag) {
     UpdateSongs(object);
 }
 
+function UpdateSong(id, path, name, artist, hashtag) {
+    object = songs;
+    object[id].path = path;
+    object[id].name = name;
+    object[id].artist = artist;
+    object[id].hashtag = hashtag;
+
+    UpdateSongs(object);
+}
+
 // Polls
 function NextPollID(){
 

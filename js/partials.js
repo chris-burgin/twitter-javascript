@@ -37,6 +37,7 @@ function SongPartial(){
                           </div>\
                           <div class='song_info'>\
                               <span> " + name + " <em> - " + artist + " </em></span>\
+                              <i class='fa fa-cogs' data-id='" + id + "'></i>\
                           </div>\
                       </li> ");
         return data;
@@ -66,6 +67,23 @@ function SongsInfoPartial(filepath) {
                         <span> Hashtag </span>\
                         <input id='hashtag' value=" + '#hashtag' + ">\
                         <button> Finish Up! </button>\
+                    </div>\
+                </div>";
+    return data;
+}
+
+function UpdateSongsInfoPartial(id, filepath, songname, artist, hashtag) {
+    var data = "<div class='modal-content update-song-modal center'>\
+                    <h2> Tell Us More! </h2>\
+                    <div class='content-wrapper'>\
+                        <input id='file' value='" + filepath + "' class='hidden'>\
+                        <span> Song Name </span>\
+                        <input id='name' value='" + songname + "'>\
+                        <span> Artist </span>\
+                        <input id='artist' value='" + artist + "'>\
+                        <span> Hashtag </span>\
+                        <input id='hashtag' value='" + hashtag + "'>\
+                        <button data-id='" + id + "'> Finish Up! </button>\
                     </div>\
                 </div>";
     return data;

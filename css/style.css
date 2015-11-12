@@ -272,6 +272,24 @@ ul {
     border: .2rem dashed #C2C3C7;
 }
 
+.songs .song .song_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.songs .song .song_info i {
+    margin-right: 2rem;
+    font-size: 2rem;
+    color: #C2C3C7;
+}
+
+.songs .song .song_info i:hover {
+    color: #575757;
+    cursor: pointer;
+}
+
 .songs .song .song_info span {
     font-size: 3rem;
     font-weight: 600;
@@ -296,6 +314,7 @@ ul {
     color: #2E323F;
 }
 
+.song-modal .upload-field,
 .song-modal .upload-field {
     height: 25rem;
     width: 45rem;
@@ -328,20 +347,23 @@ ul {
     display: none;
 }
 
-.song-modal .content-wrapper {
+.song-modal .content-wrapper,
+.update-song-modal .content-wrapper {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 
-.song-modal .content-wrapper input{
+.song-modal .content-wrapper input,
+.update-song-modal .content-wrapper input {
     display: flex;
     flex-flow: column;
     align-items: center;
     margin-bottom: 2rem;
 }
 
-.song-modal .content-wrapper span {
+.song-modal .content-wrapper span,
+.update-song-modal .content-wrapper span {
     width: 40.6rem;
     font-size: 2rem;
     color: white;
@@ -349,11 +371,13 @@ ul {
     margin-bottom: .5rem;
 }
 
-.modal .song-modal .content-wrapper button {
+.song-modal .content-wrapper button,
+.update-song-modal .content-wrapper button {
     width: 40rem;
 }
 
-.song-modal .content-wrapper input.hidden{
+.song-modal .content-wrapper input.hidden,
+.update-song-modal .content-wrapper input.hidden {
     display: none;
 }
 

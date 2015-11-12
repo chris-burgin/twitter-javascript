@@ -39,6 +39,18 @@ function RenderSongInfo(filepath){
     $('.modal').html(SongsInfoPartial(filepath));
 }
 
+function RenderUpdateSongsInfo(id){
+    // fetch info
+    filepath = songs[id].path;
+    songname = songs[id].name;
+    console.log(songname);
+    artist = songs[id].artist;
+    hashtag = songs[id].hashtag;
+
+    // render
+    $('.modal').html("");
+    $('.modal').html(UpdateSongsInfoPartial(id, filepath, songname, artist, hashtag));
+}
 
 // Polls
 function RenderPolls() {

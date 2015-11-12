@@ -31,32 +31,32 @@ $('html').on('click', '.modal', function(e) {
 
 
 // Modal Routes
-//Songs
+// Create Song
 $('html').on('click', '.songs-footer-content a', function(){
     OpenModal();
     RenderSongModal();
     DragDropFile();
+
+    function DragDropFile(){
+        var holder = document.getElementById('upload-field');
+        holder.ondragover = function () {
+            $('.upload-field').addClass('dragged');
+            return false;
+        };
+        holder.ondragleave = holder.ondragend = function () {
+            $('.upload-field').removeClass('dragged');
+            return false;
+        };
+        holder.ondrop = function (e) {
+            e.preventDefault();
+            var file = e.dataTransfer.files[0];
+            console.log('File you dragged here is', file.path);
+            RenderSongInfo(file.path);
+            return false;
+        };
+    }
 });
 
-function DragDropFile(){
-    var holder = document.getElementById('upload-field');
-    holder.ondragover = function () {
-        $('.upload-field').addClass('dragged');
-        return false;
-    };
-    holder.ondragleave = holder.ondragend = function () {
-        $('.upload-field').removeClass('dragged');
-        return false;
-    };
-    holder.ondrop = function (e) {
-        e.preventDefault();
-        var file = e.dataTransfer.files[0];
-        console.log('File you dragged here is', file.path);
-        RenderSongInfo(file.path);
-        return false;
-    };
-}
-// creates new
 $('html').on('click', '.song-modal button', function(){
     name = $('#name').val();
     artist = $('#artist').val();
@@ -73,6 +73,35 @@ $('html').on('click', '.song-modal button', function(){
         RenderSongs();
     }
 });
+
+// update song
+$('html').on('click', '.songs .song .song_info i', function(){
+    id = parseInt($(this).attr('data-id'));
+
+    OpenModal();
+    RenderUpdateSongsInfo(id);
+});
+
+$('html').on('click', '.update-song-modal button', function(){
+    id = $(this).attr('data-id');
+    name = $('#name').val();
+    artist = $('#artist').val();
+    hashtag = $('#hashtag').val();
+    filepath = $('#file').val();
+    console.log(filepath);
+
+    //validation
+    if (name === "" || artist === "" || hashtag === "") {
+        alert('Error');
+    } else {
+        UpdateSong(id, filepath, name, artist, hashtag);
+        CloseModal();
+        RenderSongs();
+    }
+});
+
+
+
 
 
 //Polls
