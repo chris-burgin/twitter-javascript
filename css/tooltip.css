@@ -1,0 +1,131 @@
+.tooltip {
+  position: relative;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 30px;
+  text-align: center;
+  height: 5rem;
+  width: 4rem;
+}
+
+.tooltip a {
+  display: block;
+  width: 100px;
+  height: 60px;
+  color: #88c8de;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 #38a3c8;
+  font-size: 60px;
+}
+
+.tooltip a.hover {
+  color: #38a3c8;
+}
+
+.tooltip span {
+}
+
+.tooltip > span {
+  padding: 5px;
+  width: 150px;
+  height: 50px;
+  background: #666;
+  box-shadow: 0 0 8px #ccc;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 50px;
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+
+.tooltip > span:after {
+  position: absolute;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent;
+  content: "";
+}
+
+
+.tooltip.hover > span {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-googleplus:before {
+  content: "\e600";
+}
+
+.icon-facebook:before {
+  content: "\e601";
+}
+
+.icon-instagram:before {
+  content: "\e602";
+}
+
+.icon-twitter:before {
+  content: "\e603";
+}
+
+.top > span {
+  top: -60px;
+  left: 0;
+}
+
+.top > span:after {
+  top: 60px;
+  left: 65px;
+  border-top-color: #666;
+}
+
+.right > span {
+  top: 30px;
+  left: 130px;
+}
+
+.right > span:after {
+  top: 15px;
+  left: -25px;
+  border-right-color: #666;
+}
+
+.bottom > span {
+  top: 120px;
+  left: 0;
+}
+
+.bottom > span:after {
+  top: -30px;
+  left: 65px;
+  border-bottom-color: #666;
+}
+
+.left > span {
+  top: 30px;
+  left: -145px;
+}
+
+.left > span:after {
+  top: 15px;
+  right: -30px;
+  border-left-color: #666;
+}

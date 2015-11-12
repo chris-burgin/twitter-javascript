@@ -9,8 +9,9 @@ function HeadPartial() {
                 <link href='../fonts/SourceSansPro-Semibold.ttf' ref='stylesheet'>\
                 <link href='../css/fontAwesome.css' rel='stylesheet'>\
                 <!-- CSS -->\
+                <link href='../css/tooltip.css' rel='stylesheet'>\
                 <link href='../css/style.css' rel='stylesheet'>\
-                <!-- JS -->";
+                <!-- JS -->"
     return data;
 }
 
